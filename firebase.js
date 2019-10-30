@@ -1,3 +1,5 @@
+//this page initializes our firebase database, using the info from our firebase console.
+
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
@@ -10,5 +12,6 @@ const firebaseConfig = {
     appId: "1:893805109022:web:56c0b3c30087592efdb30f"
   };
 
+  //finish the initialization, exporting it as firebase, which will be referenced later on
   firebase.initializeApp(firebaseConfig);
   export default firebase;

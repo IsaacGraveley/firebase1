@@ -17,14 +17,14 @@ export default class IconBlock extends React.Component {
   render() {
   return (
     <ScrollView contentContainerStyle={styles.updateImageContainer}>
-      {/* setup an image for the component, with the prop name of updateTitle */}
+      {/* setup an image for the component, with the prop name of Icontitle */}
         <Text style={styles.updateTitle}>{this.props.iconTitle}</Text>
-        {/* setup an image for the component, with the prop name of updateImage */}
+        {/* setup an image for the component, with the prop name of iconImage */}
         <Image
           style={styles.imageStyle}
           source={updateImages[this.props.iconImage]}
         />
-        {/* setup an image for the component, with the prop name of updateCaption */}
+        {/* setup an image for the component, with the prop name of iconCaption */}
       <Text style={styles.updateCaption}>{this.props.iconCaption}</Text>
     </ScrollView>
   );

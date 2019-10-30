@@ -33,13 +33,8 @@ export default class HomeScreen extends Component {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.newsBlock}>NHL News</Text>
-      {/* {
-         Object.keys(this.state.stories).map( (storyID, index) =>
-         <Text>{`{story}: ${JSON.stringify(this.state.stories[storyID])}`}</Text>
-         
-       )
-     } */}
 
+{/* This block displays all of our story data into a text element */}
 {
          Object.keys(this.state.stories).map( (title, index) =>
          <Text style={styles.newsBlock}>{`${JSON.stringify(this.state.stories[title])}`}</Text>       

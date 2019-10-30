@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 export default class ItemComponent extends Component {
 
+    //the element must include an array to function properly
     static propTypes = {
         items: PropTypes.array.isRequired
     };
@@ -11,6 +12,7 @@ export default class ItemComponent extends Component {
     render() {
         return (
             <View style={styles.itemsList}>
+                {/* by determining the items index/key we can assign each string a specific and unique value */}
                 {this.props.items.map((item, index) => {
                     return (
                         <View key={index}>
@@ -22,6 +24,8 @@ export default class ItemComponent extends Component {
         );
     }
 }
+
+//create styles for this component
 const styles = StyleSheet.create({
     itemsList: {
         flex: 1,

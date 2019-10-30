@@ -1,35 +1,27 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text,
-    TouchableHighlight,
-    StyleSheet,
-    TextInput,
-    Alert
-} from 'react-native';
+import {View,Text,TouchableHighlight,StyleSheet,TextInput,Alert} from 'react-native';
 import firebase from './firebase';
+//make the additem variable add the inserted item to the database when the function is executed
 let addItem = item => {
     firebase.database().ref('/items').push({
         name: item,
-        // number: item
     });
 };
 
 export default class AddItem extends Component {
+    //create an empty state to allow the name data to change
     state = {
         name: '',
-        // number: ''
     };
+    //on change set the state data name to whatever text was inputted 
     handleChange = e => {
         this.setState({
             name: e.nativeEvent.text,
-            // number: e.nativeEvent.text
         });
     };
-
+    //on submit add the item with the name currently held in the state at that time, and alert the user it's been addded
     handleSubmit = () => {
         addItem(this.state.name);
-        // addItem(this.state.number);
         Alert.alert('Item saved successfully');
     };
    
@@ -38,7 +30,9 @@ export default class AddItem extends Component {
         return (
             <View style={styles.main}>
                 <Text style={styles.title}>Add a player to your roster</Text>
+                {/* add a text input that will send the data to the state */}
                 <TextInput style={styles.itemInput} onChange={this.handleChange} placeholder="Add Item name" />
+                {/* create a button that on push will execute the handleSubmit function */}
                 <TouchableHighlight
                     style={styles.button}
                     underlayColor="white"
